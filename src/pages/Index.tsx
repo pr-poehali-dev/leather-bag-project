@@ -15,21 +15,21 @@ const Index = () => {
       id: 1,
       name: "Классическая сумка-тоут",
       image:
-        "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=400&fit=crop",
+        "https://cdn.poehali.dev/files/35843fa0-7e24-4119-81bb-3df458419685.png",
       price: "от 15 000 ₽",
     },
     {
       id: 2,
       name: "Элегантный портфель",
       image:
-        "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=400&fit=crop",
+        "https://cdn.poehali.dev/files/35843fa0-7e24-4119-81bb-3df458419685.png",
       price: "от 25 000 ₽",
     },
     {
       id: 3,
       name: "Дорожная сумка",
       image:
-        "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=400&fit=crop",
+        "https://cdn.poehali.dev/files/35843fa0-7e24-4119-81bb-3df458419685.png",
       price: "от 30 000 ₽",
     },
   ];
