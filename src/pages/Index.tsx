@@ -10,48 +10,55 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 
 const Index = () => {
-  const products = [
+  // Этапы изготовления сумки
+  const craftingStages = [
     {
       id: 1,
-      name: "Классическая сумка-тоут",
+      stage: "Подготовка материалов",
+      description: "Выбор и раскрой натуральной кожи",
       image:
         "https://cdn.poehali.dev/files/35843fa0-7e24-4119-81bb-3df458419685.png",
-      price: "от 15 000 ₽",
     },
     {
       id: 2,
-      name: "Винтажный портфель ручной работы",
+      stage: "Формирование основы",
+      description: "Создание каркаса и основных элементов",
       image:
         "https://cdn.poehali.dev/files/aaf4e6f2-7ca7-4368-bb3f-8965ef3a3e44.png",
-      price: "от 22 000 ₽",
     },
     {
       id: 3,
-      name: "Элегантная женская сумочка",
+      stage: "Сборка и прошивка",
+      description: "Соединение деталей вручную прочными швами",
       image:
         "https://cdn.poehali.dev/files/0c395486-819b-4c32-a073-5c0aef6885e1.png",
-      price: "от 18 000 ₽",
     },
     {
       id: 4,
-      name: "Деловой портфель с заклепками",
+      stage: "Финальная отделка",
+      description: "Полировка, обработка краев и установка фурнитуры",
       image:
         "https://cdn.poehali.dev/files/bdc02f48-3ef9-4e3b-a292-36d6fbb3d631.png",
-      price: "от 28 000 ₽",
     },
+  ];
+
+  // Каталог изделий
+  const products = [
     {
-      id: 5,
-      name: "Стильная сумка с пряжками",
+      id: 1,
+      name: "Обложка для ежедневника классическая",
       image:
         "https://cdn.poehali.dev/files/31da0367-39c5-408a-95ba-e5f46b838fce.png",
-      price: "от 20 000 ₽",
+      price: "от 8 000 ₽",
+      category: "Обложки",
     },
     {
-      id: 6,
-      name: "Винтажная сумка с патиной",
+      id: 2,
+      name: "Обложка для ежедневника с тиснением",
       image:
         "https://cdn.poehali.dev/files/de184548-ac98-43b7-9d09-45a7d939dff6.png",
-      price: "от 25 000 ₽",
+      price: "от 12 000 ₽",
+      category: "Обложки",
     },
   ];
 
@@ -80,17 +87,59 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Crafting Process */}
+      <section className="py-20 px-6 bg-amber-50">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold text-center text-amber-900 mb-4 font-serif">
+            Процесс изготовления
+          </h2>
+          <p className="text-center text-amber-700 mb-12 max-w-2xl mx-auto">
+            От выбора кожи до готового изделия — каждый этап выполняется вручную
+          </p>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {craftingStages.map((stage, index) => (
+              <Card
+                key={stage.id}
+                className="overflow-hidden hover:shadow-xl transition-shadow duration-300"
+              >
+                <div className="aspect-square overflow-hidden">
+                  <img
+                    src={stage.image}
+                    alt={stage.stage}
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <CardHeader>
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="bg-amber-900 text-white text-sm px-2 py-1 rounded-full">
+                      {index + 1}
+                    </span>
+                  </div>
+                  <CardTitle className="text-amber-900 text-lg">
+                    {stage.stage}
+                  </CardTitle>
+                  <CardDescription className="text-amber-700">
+                    {stage.description}
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Products Gallery */}
       <section className="py-20 px-6">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold text-center text-amber-900 mb-4 font-serif">
-            Наши работы
+            Каталог изделий
           </h2>
           <p className="text-center text-amber-700 mb-12 max-w-2xl mx-auto">
-            Каждое изделие создается индивидуально по вашим пожеланиям
+            Эксклюзивные обложки и аксессуары ручной работы
           </p>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {products.map((product) => (
               <Card
                 key={product.id}
