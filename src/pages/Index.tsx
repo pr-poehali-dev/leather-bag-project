@@ -20,17 +20,38 @@ const Index = () => {
     },
     {
       id: 2,
-      name: "Элегантный портфель",
+      name: "Винтажный портфель ручной работы",
       image:
-        "https://cdn.poehali.dev/files/35843fa0-7e24-4119-81bb-3df458419685.png",
-      price: "от 25 000 ₽",
+        "https://cdn.poehali.dev/files/aaf4e6f2-7ca7-4368-bb3f-8965ef3a3e44.png",
+      price: "от 22 000 ₽",
     },
     {
       id: 3,
-      name: "Дорожная сумка",
+      name: "Элегантная женская сумочка",
       image:
-        "https://cdn.poehali.dev/files/35843fa0-7e24-4119-81bb-3df458419685.png",
-      price: "от 30 000 ₽",
+        "https://cdn.poehali.dev/files/0c395486-819b-4c32-a073-5c0aef6885e1.png",
+      price: "от 18 000 ₽",
+    },
+    {
+      id: 4,
+      name: "Деловой портфель с заклепками",
+      image:
+        "https://cdn.poehali.dev/files/bdc02f48-3ef9-4e3b-a292-36d6fbb3d631.png",
+      price: "от 28 000 ₽",
+    },
+    {
+      id: 5,
+      name: "Стильная сумка с пряжками",
+      image:
+        "https://cdn.poehali.dev/files/31da0367-39c5-408a-95ba-e5f46b838fce.png",
+      price: "от 20 000 ₽",
+    },
+    {
+      id: 6,
+      name: "Винтажная сумка с патиной",
+      image:
+        "https://cdn.poehali.dev/files/de184548-ac98-43b7-9d09-45a7d939dff6.png",
+      price: "от 25 000 ₽",
     },
   ];
 
@@ -69,7 +90,7 @@ const Index = () => {
             Каждое изделие создается индивидуально по вашим пожеланиям
           </p>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {products.map((product) => (
               <Card
                 key={product.id}
